@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stunning interface design and development portfolio. We create extraordinary digital experiences."
+    />
+    <title>Portfolio - Mohamad Haidar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="favicon2.png" />
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="header">
+      <nav class="nav-container">
+        <div class="logo">Portfolio</div>
+        
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+      <h1 class="hero-title">
+        <span class="line">
+          <span style="animation-delay: 0.1s">Mohamad Haidar</span>
+        </span>
+        <span class="line">
+          <span style="animation-delay: 0.2s">Web & Mobile Developer</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle">
+        Passionate web & mobile developer with experience in creating intuitive
+        and engaging applications. I focus on detail, performance, and
+        extraordinary user experience.
+      </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="work" class="projects-section">
+      <!-- Project Navigation -->
+      <div class="projects-nav">
+        <button class="nav-arrow prev" aria-label="Scroll Left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <ul class="projects-list">
+          <li class="project-nav-item">
+            <a href="#" class="project-nav-link active" data-category="all"
+              >All Projects</a
+            >
+          </li>
+          <li class="project-nav-item">
+            <a href="#" class="project-nav-link" data-category="mobile"
+              >Mobile Apps</a
+            >
+          </li>
+          <li class="project-nav-item">
+            <a href="#" class="project-nav-link" data-category="web"
+              >Web Design</a
+            >
+          </li>
+          <li class="project-nav-item">
+            <a href="#" class="project-nav-link" data-category="branding"
+              >Branding</a
+            >
+          </li>
+          <li class="project-nav-item">
+            <a href="#" class="project-nav-link" data-category="uiux">UI/UX</a>
+          </li>
+        </ul>
+        <button class="nav-arrow next" aria-label="Scroll Right">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: ArusKu -->
+        <article class="project-card" data-category="mobile">
+          <div class="project-image-wrapper">
+            <a href="https://arusku.netlify.app/login" target="_blank">
+              <img
+                src="project-arusku.png"
+                alt="ArusKu Finance App"
+                class="project-image"
+                id="project-arusku"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">ArusKu</h3>
+            <p class="project-description">
+              ArusKu is a complete solution for tracking, budgeting, and analyzing
+              your personal finances. Designed with a clean and modern interface,
+              ArusKu empowers you to understand every cash flow and achieve your
+              financial goals.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Mobile App</span>
+              <span class="tag">Finance</span>
+              <span class="tag">Personal Budget</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: InventoryKu -->
+        <article class="project-card" data-category="web">
+          <div class="project-image-wrapper">
+            <a href="https://github.com/modar1106/inventoryku-management-system" target="_blank">
+              <img
+                src="project-inventoryku.jpg"
+                alt="InventoryKu System"
+                class="project-image"
+                id="project-inventoryku"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">InventoryKu</h3>
+            <p class="project-description">
+              A modern Inventory Management System built with Laravel, Tailwind
+              CSS, and PostgreSQL. Features stock tracking, supplier management,
+              and transaction history.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Web App</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">Management System</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: SmartFarm -->
+        <article class="project-card" data-category="mobile">
+          <div class="project-image-wrapper">
+            <a href="https://drive.google.com/file/d/1ODW4KZaYlDh1bUm6ZihjGaafz06oCOyG/view?usp=drive_link" target="_blank">
+              <img
+                src="project-smartfarm.png"
+                alt="SmartFarm Application"
+                class="project-image"
+                id="project-smartfarm"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">SmartFarm</h3>
+            <p class="project-description">
+              An App-based agriculture monitoring system featuring weather
+              prediction using ML, soil condition analysis, and a mobile app for
+              real-time data monitoring to help farmers optimize crop management.
+            </p>
+            <div class="project-tags">
+              <span class="tag">App</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Android App</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: Landing Page Yeni Las -->
+        <article class="project-card" data-category="web branding">
+          <div class="project-image-wrapper">
+            <a href="https://modar1106.github.io/yeni-las/" target="_blank">
+              <img
+                src="project-yenilas.png"
+                alt="Yeni Las Landing Page"
+                class="project-image"
+                id="project-yenilas"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Yeni Las Landing Page</h3>
+            <p class="project-description">
+              A professional landing page designed for a welding service business,
+              showcasing services, portfolio, and contact information with a
+              modern and responsive layout to attract potential clients.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Web Design</span>
+              <span class="tag">Landing Page</span>
+              <span class="tag">Business</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: SeraBank UI/UX -->
+        <article class="project-card" data-category="uiux">
+          <div class="project-image-wrapper">
+            <a href="https://www.figma.com/proto/hdSxjiEEWOevnDMsKEd5SM/Design-Mohamad-Haidar?page-id=0%3A1&node-id=12-5&p=f&viewport=340%2C359%2C0.16&t=lBaIjCnitgT1GH7N-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A10" target="_blank">
+              <img
+                src="project-serabank.png"
+                alt="SeraBank UI/UX"
+                class="project-image"
+                id="project-serabank"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">SeraBank</h3>
+            <p class="project-description">
+              Designing an intuitive user experience and a modern visual interface
+              for a digital banking application, aiming to simplify financial
+              transactions and enhance accessibility to banking services.
+            </p>
+            <div class="project-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Fintech</span>
+              <span class="tag">Mobile Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: SmartFarm UI/UX -->
+        <article class="project-card" data-category="uiux">
+          <div class="project-image-wrapper">
+            <a href="https://www.figma.com/proto/yPt8RxPFGf3kCVir7NXl8d/UI-Smart-Farm?page-id=&node-id=82-362&p=f&viewport=545%2C391%2C0.14&t=JsnOvi6MY3LQY3PW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3" target="_blank">
+              <img
+                src="project-smartfarm-ui.png"
+                alt="SmartFarm UI/UX"
+                class="project-image"
+                id="project-smartfarm-ui"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">SmartFarm UI/UX</h3>
+            <p class="project-description">
+              Designing a user-friendly interface for a smart agriculture
+              monitoring system to support farmers in managing their crops
+              efficiently.
+            </p>
+            <div class="project-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Agriculture</span>
+              <span class="tag">Dashboard Design</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7: Looka Food UI/UX -->
+        <article class="project-card" data-category="uiux">
+          <div class="project-image-wrapper">
+            <a href="https://www.figma.com/proto/cK8nPnCjJGi4O1eTrJPXJn/Looka-Food?page-id=0%3A1&node-id=18-24&p=f&viewport=745%2C-39299%2C4.14&t=Akb3Rbyuzxh6popF-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&show-proto-sidebar=1" target="_blank">
+              <img
+                src="project-lookafood.png"
+                alt="Looka Food UI/UX"
+                class="project-image"
+                id="project-lookafood"
+              />
+              <div class="project-overlay">View Project</div>
+            </a>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Looka Food</h3>
+            <p class="project-description">
+              A clean and modern food delivery UI/UX design tailored for seamless
+              user experience and quick access to favorite meals.
+            </p>
+            <div class="project-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Food Delivery</span>
+              <span class="tag">Mobile Design</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="skills" class="section-padding" style="background-color: var(--color-bg-secondary);">
+      <div class="container">
+        <div style="max-width: 800px">
+            <h2 class="slide-up" style="margin-bottom: 1rem">Skills & Technologies</h2>
+            <p class="slide-up" style="color: var(--color-text-secondary); margin-bottom: 2rem;">
+                I don't just write code, I build scalable solutions with modern technologies. 
+                Here is the tech stack I use daily.
+            </p>
+        </div>
+
+        <div class="skills-grid slide-up">
+            <!-- Skill Category 1 -->
+            <div class="skill-card">
+                <div class="skill-category">Mobile Development</div>
+                <div class="skill-list">
+                    <span class="tag">Flutter</span>
+                    <span class="tag">Kotlin</span>
+                    <span class="tag">Android Studio</span>
+                </div>
+            </div>
+
+            <!-- Skill Category 2 -->
+            <div class="skill-card">
+                <div class="skill-category">Web Development</div>
+                <div class="skill-list">
+                    <span class="tag">HTML/CSS</span>
+                    <span class="tag">React JS</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">Laravel</span>
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Node.js</span>
+                </div>
+            </div>
+
+            <!-- Skill Category 3 -->
+            <div class="skill-card">
+                <div class="skill-category">Design & Tools</div>
+                <div class="skill-list">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Canva</span>
+                    <span class="tag">Adobe Illustrator</span>
+                    <span class="tag">Photoshop</span>
+                    <span class="tag">Git/Github</span>
+                    <span class="tag">Firebase</span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section-padding">
+      <div class="container">
+        <h2 class="slide-up" style="margin-bottom: 3rem">Certificates</h2>
+        <div class="certificates-grid">
+          <div class="certificate-item slide-up">
+            <div class="cert-image-wrapper">
+              <img
+                src="git_certificate.png"
+                alt="Learning Git Basics with GitHub"
+                class="cert-image"
+              />
+              <div class="cert-overlay">click to see full</div>
+            </div>
+            <p class="cert-title">Learning Git Basics with GitHub</p>
+          </div>
+          <div class="certificate-item slide-up" style="animation-delay: 0.1s">
+            <div class="cert-image-wrapper">
+              <img
+                src="android_intermediate.png"
+                alt="Intermediate Android App Development"
+                class="cert-image"
+              />
+              <div class="cert-overlay">click to see full</div>
+            </div>
+            <p class="cert-title">
+              Intermediate Android App Development
+            </p>
+          </div>
+          <div class="certificate-item slide-up" style="animation-delay: 0.2s">
+            <div class="cert-image-wrapper">
+              <img
+                src="bangkit_certificate.png"
+                alt="Bangkit Graduate Certificate"
+                class="cert-image"
+              />
+              <div class="cert-overlay">click to see full</div>
+            </div>
+            <p class="cert-title">Bangkit Graduate Certificate</p>
+          </div>
+          <div class="certificate-item slide-up" style="animation-delay: 0.3s">
+            <div class="cert-image-wrapper">
+              <img
+                src="bangkit_transcript.png"
+                alt="Bangkit Final Transcript"
+                class="cert-image"
+              />
+              <div class="cert-overlay">click to see full</div>
+            </div>
+            <p class="cert-title">Bangkit Final Transcript</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section
+      id="experience"
+      class="section-padding"
+      style="background-color: var(--color-bg-secondary)"
+    >
+      <div class="container">
+        <h2 class="slide-up" style="margin-bottom: 3rem">Experience</h2>
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item slide-up">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023 - 2024</span>
+              <h3 class="timeline-title">Unsera Campus Ambassador</h3>
+              <p class="timeline-desc">
+                Representing Universitas Serang Raya students, active in campus
+                promotion activities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item slide-up" style="animation-delay: 0.1s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 - 2023 </span>
+              <h3 class="timeline-title">Back of House - Wingstop</h3>
+              <p class="timeline-desc">
+                Responsible for kitchen operations, ensuring food quality,
+                and maintaining high hygiene standards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item slide-up" style="animation-delay: 0.2s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2020 - 2021</span>
+              <h3 class="timeline-title">Chairman of MPK (SMAN 1 Rangkasbitung)</h3>
+              <p class="timeline-desc">
+                Leading the Class Representative Assembly, coordinating student
+                aspirations, and supervising the Student Council performance.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="timeline-item slide-up" style="animation-delay: 0.3s">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2019 - 2020</span>
+              <h3 class="timeline-title">MPK Member (SMAN 1 Rangkasbitung)</h3>
+              <p class="timeline-desc">
+                Active as a member of the Class Representative Assembly, participating
+                in the planning and evaluation of school activities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Let's Work Together</h3>
+            <p style="color: var(--color-text-secondary); margin-top: 1rem">
+              Have an interesting project? Let's discuss how I can help make it
+              happen.
+            </p>
+          </div>
+          <div class="footer-section">
+            <h3>Navigation</h3>
+            <ul class="footer-links">
+              <li><a href="#work">Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="mailto:mohamadhaidar0604@gmail.com">mohamadhaidar0604@gmail.com</a>
+              </li>
+              <li>Banten, Indonesia</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Portfolio. All rights reserved.</p>
+          <ul class="social-links">
+            <li><a href="https://www.instagram.com/_mohdarrr/" aria-label="Instagram">Instagram</a></li>
+            <li><a href="https://github.com/modar1106" aria-label="Github">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/mohamad-haidar-0a6148370/" aria-label="LinkedIn">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div id="lightbox-caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
