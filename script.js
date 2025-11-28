@@ -193,7 +193,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
+        if (entry.target.classList.contains("project-card")) {
+          entry.target.classList.add("visible");
+        } else {
+          entry.target.classList.add("fade-in");
+        }
         observer.unobserve(entry.target);
       }
     });

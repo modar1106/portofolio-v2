@@ -410,73 +410,6 @@ a {
   .nav-arrow.next { right: 5px; }
 }
 
-.project-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 12px;
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-  transition: all var(--transition-slow);
-  cursor: pointer;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--color-text-tertiary);
-}
-
-.project-image-wrapper {
-  width: 100%;
-  overflow: hidden;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.project-image {
-  width: 100%;
-  aspect-ratio: 16/10;
-  object-fit: cover;
-  transition: transform var(--transition-slow);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
-}
-
-.project-info {
-  padding: var(--spacing-lg);
-}
-
-.project-title {
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  margin-bottom: var(--spacing-xs);
-}
-
-.project-description {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-}
-
-.project-tags {
-  display: flex;
-  gap: var(--spacing-xs);
-  margin-top: var(--spacing-md);
-  flex-wrap: wrap;
-}
-
-.tag {
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background-color: var(--color-bg-tertiary);
-  border-radius: 20px;
-  font-size: var(--font-size-xs);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--color-text-secondary);
-}
-
 /* ===================================
    Skills Section Styles (NEW)
    =================================== */
@@ -620,8 +553,19 @@ a {
   border-radius: 12px;
   background-color: var(--color-bg-secondary);
   border: 1px solid var(--color-border);
-  transition: all var(--transition-slow);
   cursor: pointer;
+  
+  /* Initial state for scroll animation */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s ease;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card:hover {
