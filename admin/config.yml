@@ -2,7 +2,8 @@ backend:
   name: github
   repo: modar1106/portofolio-v2
   branch: main
-  base_url: https://cms-orcin-sigma.vercel.app # URL Proxy yang baru Anda buat
+  base_url: https://cms-orcin-sigma.vercel.app
+  auth_endpoint: api/auth # Menambahkan rute spesifik untuk proxy Vercel
 
 # local_backend: true # Hapus tanda pagar (#) jika ingin mengedit secara lokal kembali
 
