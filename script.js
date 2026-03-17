@@ -59,135 +59,137 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ===================================
-  // 3. Project Navigation Filter
+  // 3. Project Rendering Logic (NEW)
   // ===================================
-  const projectNavLinks = document.querySelectorAll(".project-nav-link");
-  const projectCards = document.querySelectorAll(".project-card");
+  const projectsContainer = document.getElementById("projects-container");
 
-  projectNavLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
+  function createProjectCard(project) {
+    const card = document.createElement("article");
+    card.className = "project-card";
+    card.setAttribute("data-category", project.category);
+    
+    // Create tags HTML
+    const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
 
-      // Remove active class from all links
-      projectNavLinks.forEach((l) => l.classList.remove("active"));
+    card.innerHTML = `
+      <div class="project-image-wrapper">
+        <a href="${project.link}" target="_blank">
+          <img
+            src="${project.image}"
+            alt="${project.title}"
+            class="project-image"
+          />
+          <div class="project-overlay">View Project</div>
+        </a>
+      </div>
+      <div class="project-info">
+        <h3 class="project-title">${project.title}</h3>
+        <p class="project-description">${project.description}</p>
+        <div class="project-tags">
+          ${tagsHTML}
+        </div>
+      </div>
+    `;
+    return card;
+  }
 
-      // Add active class to clicked link
-      this.classList.add("active");
+  async function loadProjects() {
+    try {
+      // Kita coba ambil projects.json (untuk data lama) 
+      // dan jika gagal/kosong kita bisa kembangkan ke sistem folder.
+      // Namun untuk sistem statis murni tanpa backend, paling stabil adalah 
+      // menyimpan semua proyek dalam SATU file JSON.
+      const response = await fetch("content/projects.json");
+      const data = await response.json();
+      const projects = data.projects || [];
+      
+      if (projectsContainer) {
+        projectsContainer.innerHTML = ""; 
+        projects.forEach(project => {
+          const card = createProjectCard(project);
+          projectsContainer.appendChild(card);
+          observer.observe(card);
+        });
+        
+        updateProjectFilterLogic();
+      }
+    } catch (error) {
+      console.error("Error loading projects:", error);
+      // Fallback message
+      if (projectsContainer) {
+        projectsContainer.innerHTML = "<p>Gagal memuat proyek. Pastikan file content/projects.json tersedia.</p>";
+      }
+    }
+  }
 
-      // Get category
-      const category = this.getAttribute("data-category");
+  // ===================================
+  // 4. Project Navigation Filter (UPDATED)
+  // ===================================
+  function updateProjectFilterLogic() {
+    const projectCards = document.querySelectorAll(".project-card");
+    const projectNavLinks = document.querySelectorAll(".project-nav-link");
 
-      // Filter projects
-      projectCards.forEach((card) => {
-        const cardCategories = card.getAttribute("data-category");
+    projectNavLinks.forEach((link) => {
+      // Remove previous listeners to avoid duplicates
+      const newLink = link.cloneNode(true);
+      link.parentNode.replaceChild(newLink, link);
+      
+      newLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelectorAll(".project-nav-link").forEach((l) => l.classList.remove("active"));
+        this.classList.add("active");
+        const category = this.getAttribute("data-category");
 
-        // Perbaikan logika: Cek apakah cardCategories ada sebelum method includes
-        if (cardCategories && (category === "all" || cardCategories.includes(category))) {
-          card.style.display = "block";
-          // Reset animation trick
-          card.style.animation = "none";
-          card.offsetHeight; /* trigger reflow */
-          card.style.animation = "fadeInUp 0.6s ease forwards";
-        } else {
-          card.style.display = "none";
-        }
+        projectCards.forEach((card) => {
+          const cardCategories = card.getAttribute("data-category");
+          if (cardCategories && (category === "all" || cardCategories.includes(category))) {
+            card.style.display = "block";
+            card.style.animation = "none";
+            card.offsetHeight;
+            card.style.animation = "fadeInUp 0.6s ease forwards";
+          } else {
+            card.style.display = "none";
+          }
+        });
       });
     });
-  });
+  }
 
-  // ... existing code ...
   // ===================================
-  // 4. Horizontal Scroll for Project Nav (UPDATED WITH ARROWS)
+  // 5. Horizontal Scroll for Project Nav
   // ===================================
   const projectsList = document.querySelector(".projects-list");
   const prevBtn = document.querySelector(".nav-arrow.prev");
   const nextBtn = document.querySelector(".nav-arrow.next");
 
-  // Fungsi untuk update visibilitas panah
   const updateArrowVisibility = () => {
     if (!projectsList) return;
-
     const scrollLeft = projectsList.scrollLeft;
     const maxScrollLeft = projectsList.scrollWidth - projectsList.clientWidth;
-
-    // Tampilkan panah kiri jika tidak di posisi awal (0)
-    // Gunakan toleransi 5px untuk presisi
     if (prevBtn) {
-      if (scrollLeft > 5) {
-        prevBtn.classList.add("visible");
-      } else {
-        prevBtn.classList.remove("visible");
-      }
+      if (scrollLeft > 5) prevBtn.classList.add("visible");
+      else prevBtn.classList.remove("visible");
     }
-
-    // Tampilkan panah kanan jika belum mentok di ujung
     if (nextBtn) {
-      if (scrollLeft < maxScrollLeft - 5) {
-        nextBtn.classList.add("visible");
-      } else {
-        nextBtn.classList.remove("visible");
-      }
+      if (scrollLeft < maxScrollLeft - 5) nextBtn.classList.add("visible");
+      else nextBtn.classList.remove("visible");
     }
   };
 
-  // Event Listener untuk Tombol Panah
   if (prevBtn && nextBtn && projectsList) {
-    prevBtn.addEventListener("click", () => {
-      projectsList.scrollBy({ left: -200, behavior: "smooth" });
-    });
-
-    nextBtn.addEventListener("click", () => {
-      projectsList.scrollBy({ left: 200, behavior: "smooth" });
-    });
-
-    // Cek visibility saat discroll
+    prevBtn.addEventListener("click", () => projectsList.scrollBy({ left: -200, behavior: "smooth" }));
+    nextBtn.addEventListener("click", () => projectsList.scrollBy({ left: 200, behavior: "smooth" }));
     projectsList.addEventListener("scroll", updateArrowVisibility);
-    
-    // Cek visibility saat load dan resize window
     window.addEventListener("resize", updateArrowVisibility);
-    
-    // Panggil sekali saat inisialisasi
     updateArrowVisibility();
   }
 
-  // Drag Scroll Logic (Existing)
-  let isDown = false;
-  let startX;
-  let scrollLeft;
-
-  if (projectsList) {
-    projectsList.addEventListener("mousedown", (e) => {
-      isDown = true;
-      projectsList.style.cursor = "grabbing";
-      startX = e.pageX - projectsList.offsetLeft;
-      scrollLeft = projectsList.scrollLeft;
-    });
-
-    projectsList.addEventListener("mouseleave", () => {
-      isDown = false;
-      projectsList.style.cursor = "grab";
-    });
-
-    projectsList.addEventListener("mouseup", () => {
-      isDown = false;
-      projectsList.style.cursor = "grab";
-    });
-
-    projectsList.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - projectsList.offsetLeft;
-      const walk = (x - startX) * 2;
-      projectsList.scrollLeft = scrollLeft - walk;
-    });
-  }
-
   // ===================================
-  // 5. Intersection Observer for Animations
+  // 6. Intersection Observer for Animations
   // ===================================
   const observerOptions = {
     threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px", // Sedikit disesuaikan agar animasi lebih cepat muncul
+    rootMargin: "0px 0px -50px 0px",
   };
 
   const observer = new IntersectionObserver(function (entries) {
@@ -203,47 +205,34 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, observerOptions);
 
-  projectCards.forEach((card) => {
-    observer.observe(card);
-  });
-
   const slideUpElements = document.querySelectorAll(".slide-up");
-  slideUpElements.forEach((element) => {
-    observer.observe(element);
-  });
+  slideUpElements.forEach((element) => observer.observe(element));
+
+  // Initialize
+  loadProjects();
 
   // ===================================
-  // 6. Header Scroll Effect
+  // 7. Header Scroll Effect
   // ===================================
   const header = document.querySelector(".header");
   let lastScroll = 0;
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
+    if (currentScroll <= 0) header.style.boxShadow = "none";
+    else header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.5)";
 
-    if (currentScroll <= 0) {
-      header.style.boxShadow = "none";
-    } else {
-      header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.5)";
-    }
-
-    if (currentScroll > lastScroll && currentScroll > 100) {
-      header.style.transform = "translateY(-100%)";
-    } else {
-      header.style.transform = "translateY(0)";
-    }
-
+    if (currentScroll > lastScroll && currentScroll > 100) header.style.transform = "translateY(-100%)";
+    else header.style.transform = "translateY(0)";
     lastScroll = currentScroll;
   });
 
   // ===================================
-  // 7. Parallax Effect for Hero
+  // 8. Parallax Effect for Hero
   // ===================================
   window.addEventListener("scroll", () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector(".hero");
-
-    // Hanya jalankan jika hero ada dan window tidak di mobile (opsional, untuk performa)
     if (hero && window.innerWidth > 768 && scrolled < window.innerHeight) {
       hero.style.transform = `translateY(${scrolled * 0.5}px)`;
       hero.style.opacity = 1 - scrolled / window.innerHeight;
@@ -251,9 +240,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ===================================
-  // 8. Custom Cursor (Optional)
+  // 9. Custom Cursor
   // ===================================
-  // Cek apakah device punya mouse (bukan touch screen)
   if (window.matchMedia("(pointer: fine)").matches) {
     const cursor = document.createElement("div");
     cursor.classList.add("custom-cursor");
@@ -263,12 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cursorFollower.classList.add("cursor-follower");
     document.body.appendChild(cursorFollower);
 
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-    let followerX = 0;
-    let followerY = 0;
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, followerX = 0, followerY = 0;
 
     document.addEventListener("mousemove", (e) => {
       mouseX = e.clientX;
@@ -280,83 +263,60 @@ document.addEventListener("DOMContentLoaded", function () {
       cursorY += (mouseY - cursorY) * 0.3;
       followerX += (mouseX - followerX) * 0.1;
       followerY += (mouseY - followerY) * 0.1;
-
       cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
       cursorFollower.style.transform = `translate(${followerX}px, ${followerY}px)`;
-
       requestAnimationFrame(animateCursor);
     }
-
     animateCursor();
 
-    const interactiveElements = document.querySelectorAll(
-      "a, button, .project-card, .hamburger"
-    );
-
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        cursor.classList.add("cursor-hover");
-        cursorFollower.classList.add("cursor-hover");
+    const updateInteractiveCursors = () => {
+      const interactiveElements = document.querySelectorAll("a, button, .project-card, .hamburger");
+      interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+          cursor.classList.add("cursor-hover");
+          cursorFollower.classList.add("cursor-hover");
+        });
+        el.addEventListener("mouseleave", () => {
+          cursor.classList.remove("cursor-hover");
+          cursorFollower.classList.remove("cursor-hover");
+        });
       });
-
-      el.addEventListener("mouseleave", () => {
-        cursor.classList.remove("cursor-hover");
-        cursorFollower.classList.remove("cursor-hover");
-      });
-    });
+    };
+    // Call this after projects load
+    setTimeout(updateInteractiveCursors, 2000);
   }
 
   // ===================================
-  // 9. Loading Animation
+  // 10. Loading Animation
   // ===================================
   window.addEventListener("load", () => {
     document.body.classList.add("loaded");
   });
+
   // ===================================
-  // 10. Lightbox Logic
+  // 11. Lightbox Logic
   // ===================================
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
-  const lightboxCaption = document.getElementById("lightbox-caption");
   const closeBtn = document.querySelector(".lightbox-close");
   const certificateImages = document.querySelectorAll(".cert-image");
 
   certificateImages.forEach((img) => {
     img.addEventListener("click", () => {
       lightbox.style.display = "flex";
-      // Gunakan setTimeout agar transisi opacity berjalan
-      setTimeout(() => {
-        lightbox.classList.add("show");
-      }, 10);
+      setTimeout(() => lightbox.classList.add("show"), 10);
       lightboxImg.src = img.src;
-      // lightboxCaption.innerHTML = img.alt;
-      document.body.style.overflow = "hidden"; // Disable scroll
+      document.body.style.overflow = "hidden";
     });
   });
 
   function closeLightbox() {
     lightbox.classList.remove("show");
-    setTimeout(() => {
-      lightbox.style.display = "none";
-    }, 300); // Sesuaikan dengan durasi transisi CSS
-    document.body.style.overflow = "auto"; // Enable scroll
+    setTimeout(() => lightbox.style.display = "none", 300);
+    document.body.style.overflow = "auto";
   }
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closeLightbox);
-  }
-
-  // Close lightbox when clicking outside the image
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  // Close lightbox with Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("show")) {
-      closeLightbox();
-    }
-  });
+  if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && lightbox.classList.contains("show")) closeLightbox(); });
 });

@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: modar1106/portofolio-v2
+  branch: main
+  base_url: https://cms-orcin-sigma.vercel.app # URL Proxy yang baru Anda buat
+
+# local_backend: true # Hapus tanda pagar (#) jika ingin mengedit secara lokal kembali
+
+media_folder: "." # Folder tempat gambar baru akan disimpan
+public_folder: "." # Jalur yang akan ditulis di file JSON
+
+collections:
+  - name: "content"
+    label: "Content"
+    files:
+      - label: "Projects List"
+        name: "projects"
+        file: "content/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["mobile", "web", "branding", "uiux"] }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Project URL", name: "link", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Tags", name: "tags", widget: "list" }

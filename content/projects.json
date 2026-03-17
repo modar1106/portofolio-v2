@@ -1,0 +1,108 @@
+{
+  "projects": [
+    {
+      "id": "arusku",
+      "title": "ArusKu",
+      "category": "mobile",
+      "image": "project-arusku.png",
+      "link": "https://arusku.netlify.app/login",
+      "description": "ArusKu is a complete solution for tracking, budgeting, and analyzing your personal finances. Designed with a clean and modern interface, ArusKu empowers you to understand every cash flow and achieve your financial goals.",
+      "tags": [
+        "Mobile App",
+        "Finance",
+        "Personal Budget"
+      ]
+    },
+    {
+      "id": "festivo",
+      "title": "Festivo",
+      "category": "web",
+      "image": "project-festivo.png",
+      "link": "https://festivo.m-haidar.my.id",
+      "description": "Festivo is a modern, responsive web application designed to simplify the experience of discovering events and booking tickets. Built with the latest web technologies, it bridges the gap between event organizers and attendees with a seamless, intuitive interface.",
+      "tags": [
+        "Web App",
+        "Event Booking",
+        "Ticket Booking"
+      ]
+    },
+    {
+      "id": "inventoryku",
+      "title": "InventoryKu",
+      "category": "web",
+      "image": "project-inventoryku.jpg",
+      "link": "https://github.com/modar1106/inventoryku-management-system",
+      "description": "A modern Inventory Management System built with Laravel, Tailwind CSS, and PostgreSQL. Features stock tracking, supplier management, and transaction history.",
+      "tags": [
+        "Web App",
+        "Laravel",
+        "Management System"
+      ]
+    },
+    {
+      "id": "smartfarm",
+      "title": "SmartFarm",
+      "category": "mobile",
+      "image": "project-smartfarm.png",
+      "link": "https://drive.google.com/file/d/1ODW4KZaYlDh1bUm6ZihjGaafz06oCOyG/view?usp=drive_link",
+      "description": "An App-based agriculture monitoring system featuring weather prediction using ML, soil condition analysis, and a mobile app for real-time data monitoring to help farmers optimize crop management.",
+      "tags": [
+        "App",
+        "Machine Learning",
+        "Android App"
+      ]
+    },
+    {
+      "id": "yenilas",
+      "title": "Yeni Las Landing Page",
+      "category": "web branding",
+      "image": "project-yenilas.png",
+      "link": "https://modar1106.github.io/yeni-las/",
+      "description": "A professional landing page designed for a welding service business, showcasing services, portfolio, and contact information with a modern and responsive layout to attract potential clients.",
+      "tags": [
+        "Web Design",
+        "Landing Page",
+        "Business"
+      ]
+    },
+    {
+      "id": "serabank",
+      "title": "SeraBank",
+      "category": "uiux",
+      "image": "project-serabank.png",
+      "link": "https://www.figma.com/proto/hdSxjiEEWOevnDMsKEd5SM/Design-Mohamad-Haidar?page-id=0%3A1&node-id=12-5&p=f&viewport=340%2C359%2C0.16&t=lBaIjCnitgT1GH7N-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A10",
+      "description": "Designing an intuitive user experience and a modern visual interface for a digital banking application, aiming to simplify financial transactions and enhance accessibility to banking services.",
+      "tags": [
+        "UI/UX",
+        "Fintech",
+        "Mobile Design"
+      ]
+    },
+    {
+      "id": "smartfarm-ui",
+      "title": "SmartFarm UI/UX",
+      "category": "uiux",
+      "image": "project-smartfarm-ui.png",
+      "link": "https://www.figma.com/proto/yPt8RxPFGf3kCVir7NXl8d/UI-Smart-Farm?page-id=&node-id=82-362&p=f&viewport=545%2C391%2C0.14&t=JsnOvi6MY3LQY3PW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3",
+      "description": "Designing a user-friendly interface for a smart agriculture monitoring system to support farmers in managing their crops efficiently.",
+      "tags": [
+        "UI/UX",
+        "Agriculture",
+        "Dashboard Design"
+      ]
+    },
+    {
+      "id": "lookafood",
+      "title": "Looka Food",
+      "category": "uiux",
+      "image": "project-lookafood.png",
+      "link": "https://www.figma.com/proto/cK8nPnCjJGi4O1eTrJPXJn/Looka-Food?page-id=0%3A1&node-id=18-24&p=f&viewport=745%2C-39299%2C4.14&t=Akb3Rbyuzxh6popF-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&show-proto-sidebar=1",
+      "description": "A clean and modern food delivery UI/UX design tailored for seamless user experience and quick access to favorite meals.",
+      "tags": [
+        "UI/UX",
+        "Food Delivery",
+        "Mobile Design"
+      ]
+    }
+  ]
+}
