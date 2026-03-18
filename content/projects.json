@@ -4,7 +4,7 @@
       "id": "ussi-its",
       "title": "PT USSI Itqan Tekno Solusi",
       "category": "web",
-      "image": "project-ussi.png",
+      "image": "project-ussii.png",
       "link": "https://ussiits.com",
       "description": "A dynamic corporate profile website for PT USSI Itqan Tekno Solusi. Built using Next.js 15, Framer Motion, and shadcn/ui. Developed as a full-stack project during my internship.",
       "tags": ["Next.js", "React", "Fullstack", "Framer Motion", "Tailwind CSS"]
