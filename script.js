@@ -208,8 +208,100 @@ document.addEventListener("DOMContentLoaded", function () {
   const slideUpElements = document.querySelectorAll(".slide-up");
   slideUpElements.forEach((element) => observer.observe(element));
 
-  // Initialize
+  // We will initialize them after their functions are fully declared.
+
+  // ===================================
+  // 12. Dynamic Certificates Logic (NEW)
+  // ===================================
+  const certificatesContainer = document.getElementById("certificates-container");
+
+  function createCertificateCard(cert, index) {
+    const card = document.createElement("div");
+    card.className = "certificate-item slide-up";
+    card.style.animationDelay = `${index * 0.1}s`;
+
+    card.innerHTML = `
+      <div class="cert-image-wrapper">
+        <img
+          src="${cert.image}"
+          alt="${cert.title}"
+          class="cert-image"
+        />
+        <div class="cert-overlay">click to see full</div>
+      </div>
+      <p class="cert-title">${cert.title}</p>
+    `;
+    return card;
+  }
+
+  async function loadCertificates() {
+    try {
+      if (!certificatesContainer) return;
+      const response = await fetch("content/certificates.json");
+      const data = await response.json();
+      const certificates = data.certificates || [];
+      
+      certificatesContainer.innerHTML = ""; 
+      certificates.forEach((cert, index) => {
+        const card = createCertificateCard(cert, index);
+        certificatesContainer.appendChild(card);
+        observer.observe(card);
+      });
+      
+      // Re-initialize lightbox listeners for new images
+      initializeLightbox();
+    } catch (error) {
+      console.error("Error loading certificates:", error);
+      certificatesContainer.innerHTML = "<p>Gagal memuat sertifikat.</p>";
+    }
+  }
+
+  // ===================================
+  // 13. Dynamic Experience Logic (NEW)
+  // ===================================
+  const experienceContainer = document.getElementById("experience-container");
+
+  function createExperienceCard(exp, index) {
+    const card = document.createElement("div");
+    card.className = "timeline-item slide-up";
+    if (index > 0) card.style.animationDelay = `${index * 0.1}s`;
+
+    card.innerHTML = `
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">${exp.period}</span>
+        <h3 class="timeline-title">${exp.title}</h3>
+        <p class="timeline-desc">${exp.description}</p>
+      </div>
+    `;
+    return card;
+  }
+
+  async function loadExperience() {
+    try {
+      if (!experienceContainer) return;
+      const response = await fetch("content/experience.json");
+      const data = await response.json();
+      const experiences = data.experiences || [];
+      
+      experienceContainer.innerHTML = ""; 
+      experiences.forEach((exp, index) => {
+        const card = createExperienceCard(exp, index);
+        experienceContainer.appendChild(card);
+        observer.observe(card);
+      });
+    } catch (error) {
+      console.error("Error loading experiences:", error);
+      experienceContainer.innerHTML = "<p>Gagal memuat data pengalaman.</p>";
+    }
+  }
+
+  // ===================================
+  // Initialize Dynamic Content
+  // ===================================
   loadProjects();
+  loadCertificates();
+  loadExperience();
 
   // ===================================
   // 7. Header Scroll Effect
@@ -299,16 +391,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.querySelector(".lightbox-close");
-  const certificateImages = document.querySelectorAll(".cert-image");
-
-  certificateImages.forEach((img) => {
-    img.addEventListener("click", () => {
-      lightbox.style.display = "flex";
-      setTimeout(() => lightbox.classList.add("show"), 10);
-      lightboxImg.src = img.src;
-      document.body.style.overflow = "hidden";
+  
+  function initializeLightbox() {
+    const certificateImages = document.querySelectorAll(".cert-image");
+    
+    // Remove old listeners to prevent duplicates if called multiple times
+    certificateImages.forEach(img => {
+      // Clone and replace to remove all previous event listeners easily
+      const newImg = img.cloneNode(true);
+      if(img.parentNode) {
+        img.parentNode.replaceChild(newImg, img);
+      }
+      
+      newImg.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        setTimeout(() => lightbox.classList.add("show"), 10);
+        lightboxImg.src = newImg.src;
+        document.body.style.overflow = "hidden";
+      });
     });
-  });
+  }
 
   function closeLightbox() {
     lightbox.classList.remove("show");

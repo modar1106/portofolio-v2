@@ -1,0 +1,29 @@
+{
+  "experiences": [
+    {
+      "period": "2026 (2 Months)",
+      "title": "Fullstack Developer Intern - PT USSI Itqan Tekno Solusi",
+      "description": "Developed 3 full-stack projects including corporate profiles and a crowdfunding platform using Next.js, React, and modern UI frameworks."
+    },
+    {
+      "period": "2023 - 2024",
+      "title": "Unsera Campus Ambassador",
+      "description": "Representing Universitas Serang Raya students, active in campus promotion activities."
+    },
+    {
+      "period": "2022 - 2023",
+      "title": "Back of House - Wingstop",
+      "description": "Responsible for kitchen operations, ensuring food quality, and maintaining high hygiene standards."
+    },
+    {
+      "period": "2020 - 2021",
+      "title": "Chairman of MPK (SMAN 1 Rangkasbitung)",
+      "description": "Leading the Class Representative Assembly, coordinating student aspirations, and supervising the Student Council performance."
+    },
+    {
+      "period": "2019 - 2020",
+      "title": "MPK Member (SMAN 1 Rangkasbitung)",
+      "description": "Active as a member of the Class Representative Assembly, participating in the planning and evaluation of school activities."
+    }
+  ]
+}

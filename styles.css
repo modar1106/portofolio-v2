@@ -1147,9 +1147,10 @@ body.loaded {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     gap: var(--spacing-md);
-    padding: 0 var(--spacing-lg) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
@@ -1168,9 +1169,10 @@ body.loaded {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     gap: var(--spacing-md);
-    padding: 0 var(--spacing-lg) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }

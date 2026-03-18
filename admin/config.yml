@@ -29,3 +29,24 @@ collections:
               - { label: "Project URL", name: "link", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Tags", name: "tags", widget: "list" }
+      - label: "Certificates List"
+        name: "certificates"
+        file: "content/certificates.json"
+        fields:
+          - label: "Certificates"
+            name: "certificates"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+      - label: "Experience List"
+        name: "experience"
+        file: "content/experience.json"
+        fields:
+          - label: "Experiences"
+            name: "experiences"
+            widget: "list"
+            fields:
+              - { label: "Period", name: "period", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
