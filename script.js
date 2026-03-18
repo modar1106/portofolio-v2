@@ -72,23 +72,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
 
     card.innerHTML = `
-      <div class="project-image-wrapper">
-        <a href="${project.link}" target="_blank">
-          <img
-            src="${project.image}"
-            alt="${project.title}"
-            class="project-image"
-          />
-          <div class="project-overlay">View Project</div>
-        </a>
-      </div>
-      <div class="project-info">
-        <h3 class="project-title">${project.title}</h3>
-        <p class="project-description">${project.description}</p>
-        <div class="project-tags">
-          ${tagsHTML}
+      <a href="${project.link}" target="_blank">
+        <div class="project-image-wrapper">
+            <img
+              src="${project.image}"
+              alt="${project.title}"
+              class="project-image"
+            />
+            <div class="project-overlay">View Project</div>
+          
         </div>
-      </div>
+        <div class="project-info">
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-description">${project.description}</p>
+          <div class="project-tags">
+            ${tagsHTML}
+          </div>
+        </div>
+      </a>
     `;
     return card;
   }
