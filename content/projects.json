@@ -1,31 +1,49 @@
 {
   "projects": [
     {
-      "id": "ussi-its",
-      "title": "PT USSI Itqan Tekno Solusi",
-      "category": "web",
-      "image": "project-ussii.png",
-      "link": "https://ussiits.com",
-      "description": "A dynamic corporate profile website for PT USSI Itqan Tekno Solusi. Built using Next.js 15, Framer Motion, and shadcn/ui. Developed as a full-stack project during my internship.",
-      "tags": ["Next.js", "React", "Fullstack", "Framer Motion", "Tailwind CSS"]
-    },
-    {
-      "id": "itqan-peduli",
-      "title": "Itqan Peduli",
-      "category": "web",
-      "image": "project-itqan-peduli.png",
-      "link": "https://darkturquoise-elephant-422363.hostingersite.com/",
-      "description": "An interactive corporate profile for Itqan Peduli. Features include Next.js 14, Leaflet for mapping, and Framer Motion. Fully developed from front-end to back-end.",
-      "tags": ["Next.js", "React", "Leaflet", "Fullstack", "Framer Motion"]
-    },
-    {
       "id": "tolong-menolong",
       "title": "TolongMenolong.id",
       "category": "web",
       "image": "project-tolongmenolong.png",
       "link": "https://mistyrose-spoonbill-590435.hostingersite.com/",
       "description": "A comprehensive crowdfunding platform (tolongmenolong.id). Built with Next.js 14 and secured with reCAPTCHA. (Under Development).",
-      "tags": ["Next.js", "React", "Crowdfunding", "Fullstack", "Tailwind CSS"]
+      "tags": [
+        "Next.js",
+        "React",
+        "Crowdfunding",
+        "Fullstack",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "id": "ussi-its",
+      "title": "PT USSI Itqan Tekno Solusi",
+      "category": "web",
+      "image": "project-ussii.png",
+      "link": "https://ussiits.com",
+      "description": "A dynamic corporate profile website for PT USSI Itqan Tekno Solusi. Built using Next.js 15, Framer Motion, and shadcn/ui. Developed as a full-stack project during my internship.",
+      "tags": [
+        "Next.js",
+        "React",
+        "Fullstack",
+        "Framer Motion",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "id": "itqan-peduli",
+      "title": "Itqan Peduli",
+      "category": "web",
+      "image": "project-itqan-peduli.png",
+      "link": "https://yayasan.itqanpeduli.com",
+      "description": "An interactive corporate profile for Itqan Peduli. Features include Next.js 14, Leaflet for mapping, and Framer Motion. Fully developed from front-end to back-end.",
+      "tags": [
+        "Next.js",
+        "React",
+        "Leaflet",
+        "Fullstack",
+        "Framer Motion"
+      ]
     },
     {
       "id": "arusku",
