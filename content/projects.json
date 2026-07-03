@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "id": "ats-cv-builder",
+      "title": "ATS CV Builder",
+      "category": "web",
+      "image": "og-image.png",
+      "link": "https://ats.m-haidar.my.id/",
+      "description": "A modern, fast, and professional ATS-friendly CV/Resume builder that generates perfectly formatted A4 single or multi-page PDFs directly from the browser. Built using zero external dependencies—just clean HTML, Vanilla CSS, and modern JavaScript.",
+      "tags": [
+        "Tailwind CSS",
+        "Static Website",
+        "CV Builder"
+      ]
+    },
+    {
       "id": "tolong-menolong",
       "title": "TolongMenolong.id",
       "category": "web",
