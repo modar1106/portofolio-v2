@@ -34,7 +34,7 @@
       "category": "web",
       "image": "project-ussii.png",
       "link": "https://ussiits.com",
-      "description": "A dynamic corporate profile website for PT USSI Itqan Tekno Solusi. Built using Next.js 15, Framer Motion, and shadcn/ui. Developed as a full-stack project during my internship.",
+      "description": "A dynamic corporate profile website for PT USSI Itqan Tekno Solusi. Built using Next.js, Framer Motion, and shadcn/ui. Developed as a full-stack project during my internship.",
       "tags": [
         "Next.js",
         "React",
@@ -49,7 +49,7 @@
       "category": "web",
       "image": "project-itqan-peduli.png",
       "link": "https://itqanpeduli.com",
-      "description": "An interactive corporate profile for Itqan Peduli. Features include Next.js 14, Leaflet for mapping, and Framer Motion. Fully developed from front-end to back-end.",
+      "description": "An interactive corporate profile for Itqan Peduli. Features include Next.js , Leaflet for mapping, and Framer Motion. Fully developed from front-end to back-end.",
       "tags": [
         "Next.js",
         "React",
