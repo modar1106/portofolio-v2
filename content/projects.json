@@ -1,6 +1,24 @@
 {
   "projects": [
     {
+      "id": "neurid-bot",
+      "title": "NeuridBot - AI Assistant & Document Intelligence Platform",
+      "category": "web",
+      "link": "https://bot.m-haidar.my.id",
+      "description": "Platform asisten AI cerdas berbasis multi-tier architecture yang terintegrasi antara Web Dashboard (React) dan Telegram Bot. Dilengkapi kemampuan Deep Reasoning (Chain-of-Thought), ekstraksi & analisis dokumen PDF/Word, Realtime RAG berita terkini, serta arsitektur backend berkinerja tinggi menggunakan FastAPI, Redis Caching, dan Supabase Database.",
+      "tags": [
+        "FastAPI",
+        "React",
+        "Docker",
+        "OpenRouter AI",
+        "Supabase",
+        "Redis",
+        "Telegram Bot API",
+        "Nginx"
+      ],
+      "image": "screenshot-2026-08-24-001426.png"
+    },
+    {
       "id": "ats-cv-builder",
       "title": "ATS CV Builder",
       "category": "web",
