@@ -1,29 +1,15 @@
 {
   "projects": [
     {
-      "id": "ats-cv-builder",
-      "title": "ATS CV Builder",
-      "category": "web",
-      "image": "og-image.png",
-      "link": "https://ats.m-haidar.my.id/",
-      "description": "A modern, fast, and professional ATS-friendly CV/Resume builder that generates perfectly formatted A4 single or multi-page PDFs directly from the browser. Built using zero external dependencies—just clean HTML, Vanilla CSS, and modern JavaScript.",
-      "tags": [
-        "Tailwind CSS",
-        "Static Website",
-        "CV Builder"
-      ]
-    },
-    {
       "id": "tolong-menolong",
       "title": "TolongMenolong.id",
       "category": "web",
       "image": "project-tolongmenolong.png",
       "link": "https://tolongmenolong.id",
-      "description": "A comprehensive crowdfunding platform (tolongmenolong.id).",
+      "description": "A crowdfunding platform connecting donors with verified campaigns. Built with Next.js, React, and Tailwind CSS as a full-stack application during my internship.",
       "tags": [
         "Next.js",
         "React",
-        "Crowdfunding",
         "Fullstack",
         "Tailwind CSS"
       ]
@@ -34,11 +20,10 @@
       "category": "web",
       "image": "project-ussii.png",
       "link": "https://ussiits.com",
-      "description": "A dynamic corporate profile website for PT USSI Itqan Tekno Solusi. Built using Next.js, Framer Motion, and shadcn/ui. Developed as a full-stack project during my internship.",
+      "description": "Corporate profile website with dynamic content, animations, and a modern interface. Built with Next.js, Framer Motion, and shadcn/ui during my internship.",
       "tags": [
         "Next.js",
         "React",
-        "Fullstack",
         "Framer Motion",
         "Tailwind CSS"
       ]
@@ -49,26 +34,25 @@
       "category": "web",
       "image": "project-itqan-peduli.png",
       "link": "https://itqanpeduli.com",
-      "description": "An interactive corporate profile for Itqan Peduli. Features include Next.js , Leaflet for mapping, and Framer Motion. Fully developed from front-end to back-end.",
+      "description": "Interactive corporate profile featuring Leaflet mapping, Framer Motion animations, and full-stack implementation from front-end to back-end.",
       "tags": [
         "Next.js",
         "React",
         "Leaflet",
-        "Fullstack",
         "Framer Motion"
       ]
     },
     {
-      "id": "arusku",
-      "title": "ArusKu",
-      "category": "mobile",
-      "image": "project-arusku.png",
-      "link": "https://arusku.netlify.app/login",
-      "description": "ArusKu is a complete solution for tracking, budgeting, and analyzing your personal finances. Designed with a clean and modern interface, ArusKu empowers you to understand every cash flow and achieve your financial goals.",
+      "id": "ats-cv-builder",
+      "title": "ATS CV Builder",
+      "category": "web",
+      "image": "og-image.png",
+      "link": "https://ats.m-haidar.my.id/",
+      "description": "Browser-based resume builder that generates ATS-friendly, multi-page A4 PDFs. Zero external dependencies — pure HTML, CSS, and JavaScript.",
       "tags": [
-        "Mobile App",
-        "Finance",
-        "Personal Budget"
+        "HTML/CSS",
+        "JavaScript",
+        "PDF Generation"
       ]
     },
     {
@@ -77,11 +61,11 @@
       "category": "web",
       "image": "project-festivo.png",
       "link": "https://festivo.m-haidar.my.id",
-      "description": "Festivo is a modern, responsive web application designed to simplify the experience of discovering events and booking tickets. Built with the latest web technologies, it bridges the gap between event organizers and attendees with a seamless, intuitive interface.",
+      "description": "Event discovery and ticket booking web application with responsive design and an intuitive browsing experience.",
       "tags": [
         "Web App",
         "Event Booking",
-        "Ticket Booking"
+        "Responsive"
       ]
     },
     {
@@ -90,11 +74,24 @@
       "category": "web",
       "image": "project-inventoryku.jpg",
       "link": "https://github.com/modar1106/inventoryku-management-system",
-      "description": "A modern Inventory Management System built with Laravel, Tailwind CSS, and PostgreSQL. Features stock tracking, supplier management, and transaction history.",
+      "description": "Inventory management system with stock tracking, supplier management, and transaction history. Built with Laravel, Tailwind CSS, and PostgreSQL.",
       "tags": [
-        "Web App",
         "Laravel",
-        "Management System"
+        "PostgreSQL",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "id": "arusku",
+      "title": "ArusKu",
+      "category": "mobile",
+      "image": "project-arusku.png",
+      "link": "https://arusku.netlify.app/login",
+      "description": "Personal finance tracker for budgeting and cash flow analysis with a clean, modern mobile interface.",
+      "tags": [
+        "Mobile App",
+        "Finance",
+        "UI/UX"
       ]
     },
     {
@@ -103,24 +100,11 @@
       "category": "mobile",
       "image": "project-smartfarm.png",
       "link": "https://drive.google.com/file/d/1ODW4KZaYlDh1bUm6ZihjGaafz06oCOyG/view?usp=drive_link",
-      "description": "An App-based agriculture monitoring system featuring weather prediction using ML, soil condition analysis, and a mobile app for real-time data monitoring to help farmers optimize crop management.",
+      "description": "Agriculture monitoring app with ML-based weather prediction and soil analysis. Bangkit Academy capstone project for real-time farm data monitoring.",
       "tags": [
-        "App",
+        "Android",
         "Machine Learning",
-        "Android App"
-      ]
-    },
-    {
-      "id": "yenilas",
-      "title": "Yeni Las Landing Page",
-      "category": "web branding",
-      "image": "project-yenilas.png",
-      "link": "https://modar1106.github.io/yeni-las/",
-      "description": "A professional landing page designed for a welding service business, showcasing services, portfolio, and contact information with a modern and responsive layout to attract potential clients.",
-      "tags": [
-        "Web Design",
-        "Landing Page",
-        "Business"
+        "Kotlin"
       ]
     },
     {
@@ -129,11 +113,11 @@
       "category": "uiux",
       "image": "project-serabank.png",
       "link": "https://www.figma.com/proto/hdSxjiEEWOevnDMsKEd5SM/Design-Mohamad-Haidar?page-id=0%3A1&node-id=12-5&p=f&viewport=340%2C359%2C0.16&t=lBaIjCnitgT1GH7N-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A10",
-      "description": "Designing an intuitive user experience and a modern visual interface for a digital banking application, aiming to simplify financial transactions and enhance accessibility to banking services.",
+      "description": "UI/UX design for a digital banking application focused on intuitive financial transactions and accessible banking services.",
       "tags": [
         "UI/UX",
-        "Fintech",
-        "Mobile Design"
+        "Figma",
+        "Fintech"
       ]
     },
     {
@@ -142,11 +126,11 @@
       "category": "uiux",
       "image": "project-smartfarm-ui.png",
       "link": "https://www.figma.com/proto/yPt8RxPFGf3kCVir7NXl8d/UI-Smart-Farm?page-id=&node-id=82-362&p=f&viewport=545%2C391%2C0.14&t=JsnOvi6MY3LQY3PW-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A3",
-      "description": "Designing a user-friendly interface for a smart agriculture monitoring system to support farmers in managing their crops efficiently.",
+      "description": "User interface design for a smart agriculture monitoring dashboard, helping farmers manage crops and track environmental data.",
       "tags": [
         "UI/UX",
-        "Agriculture",
-        "Dashboard Design"
+        "Figma",
+        "Agriculture"
       ]
     },
     {
@@ -155,11 +139,24 @@
       "category": "uiux",
       "image": "project-lookafood.png",
       "link": "https://www.figma.com/proto/cK8nPnCjJGi4O1eTrJPXJn/Looka-Food?page-id=0%3A1&node-id=18-24&p=f&viewport=745%2C-39299%2C4.14&t=Akb3Rbyuzxh6popF-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2&show-proto-sidebar=1",
-      "description": "A clean and modern food delivery UI/UX design tailored for seamless user experience and quick access to favorite meals.",
+      "description": "Food delivery UI/UX design with focus on quick browsing, easy ordering, and a clean visual hierarchy.",
       "tags": [
         "UI/UX",
-        "Food Delivery",
-        "Mobile Design"
+        "Figma",
+        "Food Delivery"
+      ]
+    },
+    {
+      "id": "yenilas",
+      "title": "Yeni Las Landing Page",
+      "category": "web",
+      "image": "project-yenilas.png",
+      "link": "https://modar1106.github.io/yeni-las/",
+      "description": "Professional landing page for a welding service business, showcasing services and contact information with a responsive layout.",
+      "tags": [
+        "Landing Page",
+        "HTML/CSS",
+        "Business"
       ]
     }
   ]
