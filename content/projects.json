@@ -1,6 +1,19 @@
 {
   "projects": [
     {
+      "id": "ats-cv-builder",
+      "title": "ATS CV Builder",
+      "category": "web",
+      "image": "og-image.png",
+      "link": "https://ats.m-haidar.my.id/",
+      "description": "Browser-based resume builder that generates ATS-friendly, multi-page A4 PDFs. Zero external dependencies — pure HTML, CSS, and JavaScript.",
+      "tags": [
+        "HTML/CSS",
+        "JavaScript",
+        "PDF Generation"
+      ]
+    },
+    {
       "id": "neurid-bot",
       "title": "NeuridBot - AI Assistant & Document Intelligence Platform",
       "category": "web",
@@ -58,19 +71,6 @@
         "React",
         "Leaflet",
         "Framer Motion"
-      ]
-    },
-    {
-      "id": "ats-cv-builder",
-      "title": "ATS CV Builder",
-      "category": "web",
-      "image": "og-image.png",
-      "link": "https://ats.m-haidar.my.id/",
-      "description": "Browser-based resume builder that generates ATS-friendly, multi-page A4 PDFs. Zero external dependencies — pure HTML, CSS, and JavaScript.",
-      "tags": [
-        "HTML/CSS",
-        "JavaScript",
-        "PDF Generation"
       ]
     },
     {
